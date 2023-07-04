@@ -1,0 +1,146 @@
+.press{
+    padding-top: 88px;
+    padding-bottom: 88px;
+    background-color: var(--light-color);
+
+    &__top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 33px;
+
+        @include small-tablet{
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    }
+
+    &__title{
+        margin: 0;
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 27px;
+        line-height: 38px;
+        letter-spacing: 1.2px;
+        color: #003331;
+    }
+
+    &__link{
+        border: 1px solid rgba(53, 83, 98, 0.2);
+        border-radius: 80px;
+        color: #00413E;
+    }
+
+    &__list{
+        row-gap: var(--offset);
+    }
+
+    &__item{
+        grid-column: 4 span;
+    }
+
+    @include small-tablet{
+        padding: 60px 0;
+    }
+}
+
+.press-card{
+    position: relative;
+    border-top: 1px solid rgba(53, 83, 98, 0.3);;
+    padding-top: 16px;
+    min-height: 145px;
+
+    &__top{
+        display: flex;
+        align-items: center;
+        margin-bottom: 11px;
+        gap: 16px;
+    }
+
+    &__author{
+        margin: -18px 0;
+        padding: 18px 0;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: var(--text-color);
+        padding-left: 32px;
+        background-position: left top 16px;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+        &--ted{
+            background-image: url('../../img/svg/ted.svg');
+        }
+
+        &--news{
+            background-image: url('../../img/svg/news.svg');
+        }
+
+        &--doj{
+            background-image: url('../../img/svg/doj.svg');
+        }
+
+        &--nyt{
+            background-image: url('../../img/svg/nyt.svg');
+        }
+
+        &--corr{
+            background-image: url('../../img/svg/corr.svg');
+        }
+
+        &--roc{
+            background-image: url('../../img/svg/roc.svg');
+        }
+    }
+
+    &__date{
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: var(--text-color);
+    }
+
+    &__title{
+        margin: 0;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 25px;
+        color: #00413E;
+        transition: color 0.3s ease-in-out;
+    }
+
+    &__link{
+        color: inherit;
+        transition: color 0.3s ease-in-out;
+
+        &::after{
+            content: '';
+            position: absolute;
+            inset: 0;
+        }
+
+        &:focus{
+            outline: none;
+        }
+
+        @include hover{
+                color: var(--accent-color);
+        }
+
+        &:active{
+            color: var(--active-color);
+        }
+    }
+}
+
+.press-card__link.focus-visible{
+    &::after{
+        outline: 1px solid var(--active-color);
+    }
+}
